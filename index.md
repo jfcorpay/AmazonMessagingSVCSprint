@@ -2,16 +2,16 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-window.addEventListener("onEmbeddedMessagingReady", () => {
-    console.log("Received the onEmbeddedMessagingReady event…");
- 
-    // Send data to Salesforce
-    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Card_Token": "12345"
-						    	}
-        });
- 
-});
- 
+
+			window.addEventListener("onEmbeddedMessagingReady", () => {
+				console.log("Received the onEmbeddedMessagingReady event…");
+				
+				// Send hidden field data to Salesforce
+				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+					"Card_Token": "12345"
+				});
+			});
+
 			embeddedservice_bootstrap.init(
 				'00DVE000006fyo0',
 				'Amazon_Messaging',
@@ -25,4 +25,9 @@ window.addEventListener("onEmbeddedMessagingReady", () => {
 		}
 	};
 </script>
-<script type='text/javascript' src='https://fleetcorna--svcsprint.sandbox.my.site.com/ESWAmazonMessaging1760040501879/assets/js/bootstr… onload='initEmbeddedMessaging()'></script>
+
+<script 
+	type='text/javascript' 
+	src='https://fleetcorna--svcsprint.sandbox.my.site.com/ESWAmazonMessaging1760040501879/assets/js/bootstrap.min.js' 
+	onload='initEmbeddedMessaging()'>
+</script>
