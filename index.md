@@ -29,8 +29,5 @@
 	};
 </script>
 
-<script 
-	type="text/javascript" 
-	src="https://fleetcorna--svcsprint.sandbox.my.site.com/ESWAmazonMessaging1760040501879/assets/js/bootstrap.min.js" 
-	onload="initEmbeddedMessaging()">
 </script>
+<script type='text/javascript' src='https://fleetcorna--svcsprint.sandbox.my.site.com/ESWAmazonMessaging1760040501879/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
