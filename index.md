@@ -1,23 +1,26 @@
-<script type='text/javascript'>
+<script type="text/javascript">
 	function initEmbeddedMessaging() {
 		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+			// Set the language
+			embeddedservice_bootstrap.settings.language = 'en_US'; 
 
+			// Wait for the messaging framework to finish initializing
 			window.addEventListener("onEmbeddedMessagingReady", () => {
 				console.log("Received the onEmbeddedMessagingReady event…");
-				
-				// Send hidden field data to Salesforce
+
+				// Set the hidden pre-chat field for Card Token
 				embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
-					"Card_Token": "12345"
+					"Card_Token": "12345" // Replace with your actual token value or dynamic variable
 				});
 			});
 
+			// Initialize the Embedded Messaging deployment
 			embeddedservice_bootstrap.init(
-				'00DVE000006fyo0',
-				'Amazon_Messaging',
-				'https://fleetcorna--svcsprint.sandbox.my.site.com/ESWAmazonMessaging1760040501879',
+				'00DVE000006fyo0', // Salesforce Org ID
+				'Amazon_Messaging', // Embedded Service Deployment Name
+				'https://fleetcorna--svcsprint.sandbox.my.site.com/ESWAmazonMessaging1760040501879', // Deployment URL
 				{
-					scrt2URL: 'https://fleetcorna--svcsprint.sandbox.my.salesforce-scrt.com'
+					scrt2URL: 'https://fleetcorna--svcsprint.sandbox.my.salesforce-scrt.com' // SCRT URL
 				}
 			);
 		} catch (err) {
@@ -27,7 +30,7 @@
 </script>
 
 <script 
-	type='text/javascript' 
-	src='https://fleetcorna--svcsprint.sandbox.my.site.com/ESWAmazonMessaging1760040501879/assets/js/bootstrap.min.js' 
-	onload='initEmbeddedMessaging()'>
+	type="text/javascript" 
+	src="https://fleetcorna--svcsprint.sandbox.my.site.com/ESWAmazonMessaging1760040501879/assets/js/bootstrap.min.js" 
+	onload="initEmbeddedMessaging()">
 </script>
