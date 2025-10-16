@@ -1,11 +1,13 @@
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+			embeddedservice_bootstrap.settings.language = 'en_US'; 
 
-			embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
-                    "Card_Token": "12345"
-                });
+         window.addEventListener("onEmbeddedMessagingReady", function() {
+            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+                "Card_Token": "12345"
+            });
+        });
 
 			embeddedservice_bootstrap.init(
 				'00DVE000006fyo0',
