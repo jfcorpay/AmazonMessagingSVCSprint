@@ -6,9 +6,8 @@ window.addEventListener("onEmbeddedMessagingReady", () => {
     console.log("Received the onEmbeddedMessagingReady event…");
  
     // Send data to Salesforce
-    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Card_Token": {
-						      	"value": "12345",
-						    	},
+    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Card_Token": "12345"
+						    	}
         });
  
 });
